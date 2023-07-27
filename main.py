@@ -52,6 +52,7 @@ chapters = re.split(pattern, book)
 #exclude the first one that's a tite to get the actual chapters 
 chapters = chapters[1:]
 
-for chapter in chapters:
+for nr, chapter in enumerate(chapters):
     scores = analyzer.polarity_scores(chapter)
-    print(scores)
+    print(nr + 1, scores)
+
